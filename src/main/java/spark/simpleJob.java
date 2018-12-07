@@ -38,10 +38,10 @@ public class simpleJob {
         logger.info("First action count() result : " + count);
 
         kv.groupByKey().partitions().size();
-        Map<String, Long> r = kv.groupByKey().countByKey();
+        Map<String, Object> r = kv.groupByKey().countByKey();
 
         logger.info("Second action countByKey() result :");
-        for (Map.Entry<String, Long> entry : r.entrySet()){
+        for (Map.Entry<String, Object> entry : r.entrySet()){
             logger.info(entry.getKey() + " / " + entry.getValue());
         }
 
